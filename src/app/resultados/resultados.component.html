@@ -1,0 +1,31 @@
+<div class="container col-lg-12">
+
+  <div class="tabla" style="padding:20px; border:1px solid #dadce0; border-radius: 8px; margin-top: 20px">
+      <H3>Usuarios</H3><br>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Emoji</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido Paterno</th>
+            <th scope="col">Apellido Materno</th>
+            <th scope="col">Sexo</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Correo Electrónico</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of usuarios">
+            <th scope="row" class="{{item.emoji}}"></th>
+            <td>{{item.nombre}}</td>
+            <td>{{item.apaterno}}</td>
+            <td>{{item.amaterno}}</td>
+            <td>{{item.sexo}}</td>
+            <td>{{item.edad}}</td>
+            <td>{{item.correo}}</td>
+          </tr>
+        </tbody>
+      </table>      
+  </div>
+</div> 
+

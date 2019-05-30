@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="form-group" style="margin-top:20px;" class="col-lg-12">
+      <form #miform="ngForm"style="border:1px solid #dadce0; border-radius: 8px;" >
+          <div class="form-group col-lg-12">
+              <label style="margin-top:30px;"><h5>Formulario de Registro</h5></label>
+          </div>  
+          <div class="form-group col-lg-12">
+            <input placeholder="Nombre" type="text" class="form-control" name="nombre" #nombre="ngModel" [(ngModel)]="user.nombre">
+            <span *ngIf="nombre.touched && !nombre.valid">El nombre es obligatorio</span>
+          </div>
+          <div class="form-group col-lg-12">
+            <input placeholder="Apellido Paterno" type="text" class="form-control" name="apaterno" #apaterno="ngModel" [(ngModel)]="user.apaterno" required required pattern="[a-zA-Z]+">
+            <span *ngIf="apaterno.touched && !apaterno.valid">El Apellido Paterno es obligatorio</span>
+          </div>
+          <div class="form-group col-lg-12">
+            <input placeholder="Apellido Materno" type="text" class="form-control" name="amaterno" #amaterno="ngModel" [(ngModel)]="user.amaterno" required required pattern="[a-zA-Z]+">
+            <span *ngIf="nombre.touched && !nombre.valid">El Apellido Materno es obligatorio</span>
+          </div>
+          <div class="form-group col-lg-12">
+            <select class="form-control" name="sexo" #sexo="ngModel" [(ngModel)]="user.sexo" required>
+              <option value="" selected>Sexo</option>
+              <option value="M">Masculino</option>
+              <option value="F">Femenino</option>
+            </select>
+          </div>
+          <div class="form-group col-lg-12">
+            <input placeholder="Edad" type="text" class="form-control" name="edad" #edad="ngModel" [(ngModel)]="user.edad" required pattern="">
+          </div>
+          <div class="form-group col-lg-12">
+            <input placeholder="Correo Electrónico" type="text" class="form-control" 
+            name="correo" #correo="ngModel" [(ngModel)]="user.correo"  ngModel [email]="true">
+            <span *ngIf="correo.touched && !''">El correo electrónico es obligatorio</span><br>
+            <span *ngIf="!correo.valid">Correo Electrónico invalido</span>
+
+          </div>
+          <div class="form-group col col-lg-12">
+            <button type="submit" (click)="enviar(miform)" class="btn-block btn btn-success" value="Guardar Usuario" [disabled]="!miform.form.valid">Registrar Usuario</button>
+          </div>
+          
+        </form>
+        
+  </div>
+
+  <hr>
+
+</div>
